@@ -31,10 +31,11 @@ function CreateNote() {
   ];
 
   const handleAddTag = () => {
-    if (tagInput.trim() && !formData.tags.includes(tagInput.trim())) {
+    const value = tagInput.trim().toLowerCase();
+    if (value && !formData.tags.includes(value)) {
       setFormData({
         ...formData,
-        tags: [...formData.tags, tagInput.trim()],
+        tags: [...formData.tags, value]
       });
       setTagInput("");
     }
@@ -68,6 +69,28 @@ function CreateNote() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+  
+    // Validare pentru câmpurile obligatorii
+    if (!formData.title.trim()) {
+      setToastMessage("Title is required");
+      setShowToast(true);
+      setTimeout(() => setShowToast(false), 3000);
+      return;
+    }
+  
+    if (!formData.content.trim()) {
+      setToastMessage("Content is required");
+      setShowToast(true);
+      setTimeout(() => setShowToast(false), 3000);
+      return;
+    }
+  
+    if (!formData.subject.trim()) {
+      setToastMessage("Subject is required");
+      setShowToast(true);
+      setTimeout(() => setShowToast(false), 3000);
+      return;
+    }
   
     try {
       const formDataToSend = new FormData();

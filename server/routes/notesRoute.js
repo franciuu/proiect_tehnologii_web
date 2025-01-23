@@ -104,26 +104,32 @@ router.post("/notes", isAuthenticated, async (req, res) => {
       source
     });
 
-    // Create note with explicit source handling
+    // Creează notița
     const note = await Note.create({
       title,
       content,
       subject,
-      tags,
-      sourceType: sourceType || "none",
-      sourceUrl: sourceType !== "none" ? sourceUrl : null,
-      source: sourceType !== "none" ? source : null,
-      userId: req.user.id,
+      sourceType,
+      sourceUrl,
+      source,
+      userId: req.user.id
     });
 
-    console.log("Created note:", note.toJSON());
+    // Adaugă tag-urile
+    if (tags) {
+      const tagList = JSON.parse(tags);
+      for (const tagName of tagList) {
+        const [tag, created] = await Tag.findOrCreate({
+          where: { name: tagName }
+        });
+        await note.addTag(tag);
+      }
+    }
+
     res.status(201).json(note);
   } catch (error) {
     console.error("Error creating note:", error);
-    res.status(500).json({ 
-      error: "Failed to create note",
-      details: error.message 
-    });
+    res.status(500).json({ error: "Failed to create note" });
   }
 });
 

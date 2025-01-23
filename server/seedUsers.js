@@ -26,8 +26,8 @@ const seedUsers = async () => {
         },
         {
           googleId: "098765432109876",
-          username: "Budia Iuliana",
-          email: "budiaiuliana22@stud.ase.ro",
+          username: "Bululete Bianca",
+          email: "bululetebianca22@stud.ase.ro",
         },
       ];
 

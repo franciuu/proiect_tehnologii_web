@@ -1,0 +1,84 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 250px;
+  background-color: var(--background-card-primary);
+  color: var(--text-main);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--text-main);
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 10px;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 1rem;
+  color: var(--text-link);
+  padding: 10px 15px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.link:hover {
+  background-color: var(--button-hover);
+  color: #fff;
+}
+
+.icon {
+  font-size: 1.2rem;
+  color: var(--text-link);
+  transition: color 0.3s ease;
+}
+
+.link:hover .icon {
+  color: #fff;
+}
+/* Stilizarea secțiunii de utilizator */
+.userSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  margin-top: auto; /* Împinge secțiunea în jos */
+  background-color: var(--background-card-secondary);
+  border-top: 1px solid var(--border);
+}
+
+/* Poza utilizatorului */
+.userAvatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%; /* Face poza circulară */
+  margin-bottom: 10px;
+  border: 2px solid var(--button-primary);
+}
+
+/* Email-ul utilizatorului */
+.userEmail {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  text-align: center;
+  word-break: break-word;
+}

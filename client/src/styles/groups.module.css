@@ -1,0 +1,127 @@
+.groupsContainer {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+  }
+  
+  .pageTitle {
+    color: var(--text-primary);
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+  .groupList {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .groupItem {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: #f9f9f9;
+    transition: background-color 0.3s ease;
+  }
+  
+  .groupItem:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .groupTitle {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .groupDescription {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 10px;
+  }
+  
+  .createGroupForm {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 500px;
+    margin: 0 auto 40px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .inputField {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  .createButton {
+    padding: 10px 20px;
+    background-color: var(--button-primary);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .createButton:hover {
+    background-color: var(--button-hover);
+  }
+  
+  .groupsList {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px 0;
+  }
+  
+  .groupCard {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .groupName {
+    color: var(--text-primary);
+    margin: 0;
+    font-size: 1.5rem;
+  }
+  
+  .groupDescription {
+    color: var(--text-secondary);
+    margin: 0;
+    flex-grow: 1;
+  }
+  
+  .viewDetailsButton {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #e3f2fd; /* Light blue color */
+    color: #1976d2; /* Darker blue for text */
+    text-decoration: none;
+    border-radius: 20px; /* More rounded corners */
+    text-align: center;
+    transition: background-color 0.2s;
+  }
+  
+  .viewDetailsButton:hover {
+    background-color: #bbdefb; /* Slightly darker on hover */
+  }
+  
+  .noGroupsMessage {
+    text-align: center;
+    color: var(--text-secondary);
+    grid-column: 1 / -1;
+    padding: 20px;
+  }
+  

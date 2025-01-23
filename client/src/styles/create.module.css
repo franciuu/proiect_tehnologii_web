@@ -1,0 +1,366 @@
+.createNoteForm {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-family: "Arial", sans-serif;
+  position: relative;
+  height: 100vh;
+}
+
+.createNoteTitle {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--text-main);
+  border: none;
+  outline: none;
+  background: transparent;
+  width: 100%;
+  margin-top: 60px;
+  padding: 5px 0;
+  caret-color: var(--button-primary);
+}
+
+.createNoteTitle::placeholder,
+.createNoteContent::placeholder {
+  color: var(--placeholder);
+}
+
+.rightSection {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.inputField {
+  padding: 10px;
+  font-size: 0.9rem;
+  color: var(--text-main);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background-color: var(--background-main);
+  width: 180px;
+  transition: border-color 0.3s ease;
+}
+
+.inputField:focus {
+  outline: none;
+  border-color: var(--button-primary);
+  box-shadow: 0 0 5px rgba(92, 125, 210, 0.5);
+}
+
+.toggleButton {
+  padding: 8px 15px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  background-color: var(--button-secondary);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.toggleButton:hover {
+  background-color: var(--button-hover);
+}
+
+.submitButton {
+  padding: 8px 20px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #fff;
+  background-color: var(--button-primary);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submitButton:hover {
+  background-color: var(--button-hover);
+}
+
+.previewArea {
+  flex: 1;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: var(--text-main);
+  background: var(--background-main);
+  border: 1px solid var(--border);
+  padding: 20px;
+  border-radius: 12px;
+  overflow-y: auto;
+  min-height: 300px;
+}
+
+.createNoteContent {
+  flex: 1;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: var(--text-main);
+  border: none;
+  outline: none;
+  background: transparent;
+  resize: none;
+  caret-color: var(--button-primary);
+  min-height: 300px;
+  margin-top: 20px;
+}
+
+.tagInput {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.addTagButton {
+  padding: 8px 15px;
+  background-color: var(--button-primary);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.addTagButton:hover {
+  background-color: var(--button-hover);
+}
+
+.tagList {
+  position: absolute;
+  top: 45px;
+  right: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 5px;
+  background: var(--background-main);
+  border-radius: 8px;
+  z-index: 10;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  background: var(--background-card-secondary);
+  border-radius: 12px;
+  font-size: 0.8rem;
+}
+
+.removeTag {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: 0;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.removeTag:hover {
+  color: #ff4444;
+}
+
+.toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #ff4444;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  animation: slideIn 0.3s ease-out;
+  z-index: 1000;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.sourceSection {
+  margin-top: 20px;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+}
+
+.sourceTitle {
+  font-size: 1.1rem;
+  color: #495057;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+.sourceTypeSelect {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  margin-bottom: 12px;
+  background-color: white;
+  font-size: 0.95rem;
+}
+
+.sourceUrlInput,
+.sourceInput {
+  width: 100%;
+  padding: 8px 12px;
+  margin-bottom: 12px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  font-size: 0.95rem;
+}
+
+.sourceUrlInput:focus,
+.sourceInput:focus,
+.sourceTypeSelect:focus {
+  outline: none;
+  border-color: #0066cc;
+  box-shadow: 0 0 0 2px rgba(0, 102, 204, 0.1);
+}
+
+.sourceUrlInput::placeholder,
+.sourceInput::placeholder {
+  color: #6c757d;
+  font-size: 0.9rem;
+}
+
+.fileInput {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.fileInput input[type="file"] {
+  font-size: 14px;
+  padding: 8px 12px;
+  margin: 8px 0;
+  border: 2px dashed #dee2e6;
+  border-radius: 8px;
+  background-color: #f8f9fa;
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.fileInput input[type="file"]:hover {
+  border-color: var(--button-primary);
+  background-color: #e9ecef;
+}
+
+.fileInput input[type="file"]::file-selector-button {
+  padding: 8px 16px;
+  margin-right: 16px;
+  border: none;
+  border-radius: 6px;
+  background-color: var(--button-primary);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.fileInput input[type="file"]::file-selector-button:hover {
+  background-color: var(--button-hover);
+}
+
+.cancelButton {
+  padding: 8px 15px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-left: 10px;
+}
+
+.cancelButton:hover {
+  background-color: #c82333;
+}
+
+.cancelButton:active {
+  transform: translateY(1px);
+}
+
+.fileSection {
+  margin: 20px 0;
+  padding: 15px;
+  background: var(--background-secondary);
+  border-radius: 8px;
+}
+
+.sectionTitle {
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  color: var(--text-main);
+}
+
+.fileList {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.fileItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  background: var(--background-main);
+  border-radius: 4px;
+  border: 1px solid var(--border);
+}
+
+.fileName {
+  font-size: 0.9rem;
+  color: var(--text-main);
+}
+
+.removeFileButton {
+  background: none;
+  border: none;
+  color: var(--error);
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0 8px;
+}
+
+.removeFileButton:hover {
+  color: var(--error-hover);
+}
+
+.fileInput {
+  width: 100%;
+  padding: 10px;
+  border: 2px dashed var(--border);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.fileInput:hover {
+  border-color: var(--primary);
+}

@@ -1,0 +1,495 @@
+.noteContainer {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 30px;
+  background: white;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.noteHeader {
+  margin-bottom: 20px;
+}
+
+.noteHeader h1 {
+  margin: 0 0 10px 0;
+  font-size: 24px;
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 20px 0;
+}
+
+.editButton,
+.deleteButton {
+  padding: 8px 15px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.editButton {
+  background-color: var(--button-primary);
+  color: white;
+}
+
+.editButton:hover {
+  background-color: var(--button-hover);
+}
+
+.deleteButton {
+  background-color: #dc3545;
+  color: white;
+}
+
+.deleteButton:hover {
+  background-color: #c82333;
+}
+
+.editButton:active,
+.deleteButton:active {
+  transform: translateY(1px);
+}
+
+.content {
+  margin-top: 20px;
+  line-height: 1.6;
+}
+
+.noteTitle {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--text-main);
+  margin-top: 30px;
+}
+
+.noteContent {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin-top: 20px;
+  max-width: 800px;
+}
+
+.noteInfo {
+  position: absolute;
+  top: 20px;
+  left: 40px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--text-main);
+}
+
+.noteTags {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  display: flex;
+  flex-wrap: wrap; /* Permite tagurilor să treacă pe mai multe linii */
+  gap: 8px;
+}
+
+.tag {
+  padding: 5px 12px;
+  font-size: 0.9rem;
+  background-color: var(--button-secondary);
+  color: white;
+  border-radius: 15px;
+  font-weight: bold;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.subject {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-top: 20px; 
+  margin-bottom: 10px;
+  color: var(--text-main);
+}
+
+.sourceInfo {
+  margin: 20px 0;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+}
+
+.sourceInfo h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.1rem;
+  color: #495057;
+}
+
+.sourceDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sourceDetails p {
+  margin: 0;
+  color: #495057;
+}
+
+.sourceDetails a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.sourceDetails a:hover {
+  text-decoration: underline;
+}
+
+.editTitle {
+  font-size: 2rem;
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 20px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background-color: white;
+  color: var(--text-main);
+}
+
+.editSubject {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background-color: white;
+}
+
+.editContent {
+  width: 100%;
+  min-height: 300px;
+  padding: 15px;
+  margin: 20px 0;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background-color: white;
+  font-family: inherit;
+  line-height: 1.5;
+  resize: vertical;
+}
+
+/* Source section styles */
+.sourceSection {
+  margin: 20px 0;
+  padding: 15px;
+  background: var(--background-secondary);
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+.sourceTypeSelect,
+.sourceUrlInput,
+.sourceInput {
+  width: 100%;
+  padding: 8px 12px;
+  margin-bottom: 12px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background-color: white;
+  font-size: 0.95rem;
+}
+
+.sourceTypeSelect:focus,
+.sourceUrlInput:focus,
+.sourceInput:focus,
+.editTitle:focus,
+.editSubject:focus,
+.editContent:focus {
+  outline: none;
+  border-color: var(--button-primary);
+  box-shadow: 0 0 0 2px rgba(var(--button-primary-rgb), 0.1);
+}
+
+.buttonContainer {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.saveButton,
+.cancelButton {
+  padding: 8px 15px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.saveButton {
+  background-color: var(--button-primary);
+  color: white;
+}
+
+.saveButton:hover {
+  background-color: var(--button-hover);
+}
+
+.cancelButton {
+  padding: 8px 15px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cancelButton:hover {
+  background-color: #c82333;
+}
+
+.saveButton:active,
+.cancelButton:active {
+  transform: translateY(1px);
+}
+
+/* Add these new styles to your existing CSS */
+
+.attachments {
+  margin: 20px 0;
+  padding: 20px;
+  background: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+}
+
+.attachments h3 {
+  margin: 0 0 15px 0;
+  font-size: 16px;
+  color: #495057;
+}
+
+.fileGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 15px;
+}
+
+.fileItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  background: white;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+}
+
+.filePreview {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+.fileIcon {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e9ecef;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  font-size: 24px;
+  color: #495057;
+}
+
+.downloadButton {
+  padding: 4px 8px;
+  font-size: 12px;
+  color: var(--button-primary);
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+  max-width: 140px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.downloadButton:hover {
+  color: var(--button-hover);
+}
+
+/* File upload styles */
+.fileSection {
+  margin: 20px 0;
+  padding: 15px;
+  background: var(--background-secondary);
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+.fileInput {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.fileInput input[type="file"] {
+  font-size: 14px;
+  padding: 8px 12px;
+  margin: 8px 0;
+  border: 2px dashed #dee2e6;
+  border-radius: 8px;
+  background-color: #f8f9fa;
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.fileInput input[type="file"]:hover {
+  border-color: var(--button-primary);
+  background-color: #e9ecef;
+}
+
+.deleteFileButton {
+  padding: 4px 8px;
+  font-size: 12px;
+  color: #dc3545;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.deleteFileButton:hover {
+  color: #c82333;
+}
+
+.fileName {
+  font-size: 12px;
+  color: var(--text-secondary);
+  max-width: 140px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 4px 0;
+}
+
+/* Add these new styles to your existing CSS */
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: white;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modalHeader {
+  padding: 16px 20px;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.modalHeader h2 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: #212529;
+}
+
+.modalBody {
+  padding: 20px;
+  text-align: center;
+}
+
+.modalBody p {
+  margin: 0 0 10px 0;
+  color: #495057;
+}
+
+.noteTitle {
+  font-weight: 500;
+  color: #dc3545 !important;
+}
+
+.modalFooter {
+  padding: 16px 20px;
+  border-top: 1px solid #dee2e6;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.confirmDeleteButton {
+  padding: 8px 15px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  background-color: var(--button-primary);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.confirmDeleteButton:hover {
+  background-color: var(--button-hover);
+}
+
+.cancelButton {
+  padding: 8px 15px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cancelButton:hover {
+  background-color: #c82333;
+}
+
+.confirmDeleteButton:active,
+.cancelButton:active {
+  transform: translateY(1px);
+}

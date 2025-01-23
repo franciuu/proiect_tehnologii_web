@@ -1,0 +1,22 @@
+.layout {
+  display: flex;
+  height: 100vh; /* Ocupă întreaga înălțime a ferestrei */
+}
+
+.sidebar {
+  position: fixed; /* Sidebar-ul fix în partea stângă */
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 250px; /* Lățimea sidebar-ului */
+  background-color: var(--background-card-primary); /* Fundal pastelat */
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.content {
+  margin-left: 250px; /* Lățimea sidebar-ului */
+  padding: 20px;
+  flex: 1; /* Conținutul ocupă restul spațiului */
+  background-color: var(--background-main); /* Fundal principal */
+  overflow-y: auto; /* Permite scroll vertical */
+}

@@ -1,0 +1,378 @@
+/* Main container */
+.home {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--background-main);
+  width: 100%;
+}
+
+/* Page Title */
+.home h1 {
+  font-size: 2.5rem;
+  color: var(--text-main);
+  text-align: center;
+  margin-bottom: 30px;
+  position: relative;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.home h1::after {
+  content: "";
+  display: block;
+  width: 150px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--button-primary), var(--button-hover)); /* Gradient modern */
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+/* Notes List */
+.home ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  width: 100%;
+}
+
+/* Individual Card */
+.home li {
+  background-color: var(--background-card-primary);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.home li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.home li a {
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--text-link);
+  transition: color 0.2s ease;
+}
+
+.home li a:hover {
+  color: var(--button-hover);
+}
+
+.noteTags {
+  margin-top: 10px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.tag {
+  font-size: 0.85em;
+  background: var(--background-card-secondary);
+  color: var(--text-main);
+  padding: 4px 10px;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tag:hover {
+  background: var(--button-hover);
+  color: white;
+}
+
+/* Search Section */
+.searchContainer {
+  width: 70%;
+  margin: 0 auto 30px;
+  position: relative;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 12px 20px;
+  font-size: 1rem;
+  border: 2px solid var(--border);
+  border-radius: 25px;
+  background: var(--background-card-primary);
+  color: var(--text-main);
+  transition: all 0.3s ease;
+}
+
+.searchInput:focus {
+  outline: none;
+  border-color: var(--button-primary);
+  box-shadow: 0 0 0 3px rgba(var(--button-primary-rgb), 0.2);
+}
+
+.suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--background-card-primary);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  margin-top: 5px;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.suggestionItem {
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.suggestionItem:hover {
+  background: var(--button-hover);
+  color: white;
+}
+
+/* Filter Section */
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.filterInput {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.filterInput:focus {
+  border: 1px solid var(--primary-color);
+  box-shadow: 0 0 5px #003366;
+  outline: none;
+}
+
+.filterButton {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: var(--button-hover);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.filterButton:hover {
+  background-color: #003366; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Modal Section */
+.shareModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Overlay semitransparent */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.shareModalContent {
+  background: #ffffff; /* Fundal alb pentru modal */
+  padding: 30px;
+  border-radius: 10px;
+  border: 1px solid var(--border); /* Bordura fină */
+  width: 80%;
+  max-width: 500px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow-y: auto;
+}
+
+.shareModalTitle {
+  color: var(--text-main);
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.shareModalList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.shareModalItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  background: #f9f9f9; /* Fundal deschis pentru item */
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  border: 1px solid var(--border);
+}
+
+.shareModalItem:hover {
+  background: var(--button-hover);
+  color: white;
+}
+
+.shareButton {
+  background-color: var(--button-primary);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.shareButton:hover {
+  background-color: var(--button-hover);
+}
+
+.shareModalButton {
+  padding: 8px 15px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  background-color: var(--button-primary);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.shareModalButton:hover {
+  color: var(--button-hover);
+  background-color: #003366;
+}
+
+
+.cancelButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: transparent;
+  color: var(--text-main);
+  border: none;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  background-color: var(--button-primary);
+  padding: 5px;
+}
+
+.cancelButton:hover {
+  color: var(--button-hover);
+  background-color: #003366;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: -1;
+}
+
+/* Shared Notes Section */
+.pageTitle {
+  font-size: 2rem;
+  color: var(--text-main);
+  text-align: center;
+  margin-top: 30px;
+}
+
+.notesList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  width: 100%;
+}
+
+.card {
+  background-color: var(--background-card-primary);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.noteHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.noteTitle {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--text-link);
+  transition: color 0.2s ease;
+}
+
+.noteTitle:hover {
+  color: var(--button-hover);
+}
+
+.noteDate {
+  font-size: 0.85rem;
+  color: gray;
+}
+
+.noNotesMessage {
+  font-size: 1.2rem;
+  color: gray;
+  text-align: center;
+}
+
+/* Shared Notes Empty State */
+.noUsersMessage {
+  color: #999;
+  font-size: 1rem;
+  text-align: center;
+}

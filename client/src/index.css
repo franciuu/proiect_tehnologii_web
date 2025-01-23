@@ -1,0 +1,71 @@
+:root {
+  --background-main: #f8f9fc;
+  --background-card-primary: #e4e5fb;
+  --background-card-secondary: #c9d2ee;
+  --button-primary: #5c7dd2;
+  --button-secondary: #9bbde3;
+  --button-hover: #6587d9;
+  --text-main: #2d2d2d;
+  --text-secondary: #6b6b6b;
+  --placeholder: #a4a4a4;
+  --text-link: #5c7dd2;
+  --border: #e0e0e0;
+  --hover-card: #e4e5fb;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--text-main);
+  background-color: var(--background-main);
+  line-height: 1.5;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+button {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  border: none;
+  cursor: pointer;
+}
+
+input,
+textarea,
+select,
+button {
+  font-family: inherit;
+  font-size: inherit;
+}

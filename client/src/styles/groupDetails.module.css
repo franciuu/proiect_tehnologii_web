@@ -1,0 +1,250 @@
+.groupDetailsContainer {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .pageTitle {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .groupInfo {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+  }
+  
+  .groupTitle {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .groupDescription {
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .sectionTitle {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .memberList {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .memberItem {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .memberItem:last-child {
+    border-bottom: none;
+  }
+  
+  .checkbox {
+    margin-right: 10px;
+  }
+  
+  .shareNoteForm {
+    margin-top: 20px;
+  }
+  
+  .inputField {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .shareButton {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .shareButton:hover {
+    background-color: #0056b3;
+  }
+  
+  .container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .title {
+    font-size: 2.5rem;
+    color: var(--text-main);
+    margin-bottom: 10px;
+  }
+  
+  .description {
+    color: var(--text-secondary);
+    margin-bottom: 30px;
+  }
+  
+  .section {
+    margin-bottom: 30px;
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .sectionHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .addButton {
+    padding: 8px 16px;
+    background-color: var(--button-primary);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .addButton:hover {
+    background-color: var(--button-hover);
+  }
+  
+  .membersList {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .backButton {
+    margin-top: 20px;
+    padding: 8px 16px;
+    background-color: var(--button-secondary);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .backButton:hover {
+    background-color: var(--button-hover);
+  }
+  
+  .notesList {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  .noteCard {
+    background: var(--background-card-primary);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modalContent {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+  
+  .userList {
+    margin: 20px 0;
+    max-height: 300px;
+    overflow-y: auto;
+  }
+  
+  .userItem {
+    display: block;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .userItem:hover {
+    background: var(--background-hover);
+  }
+  
+  .modalButtons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .submitButton {
+    padding: 8px 16px;
+    background-color: var(--button-primary);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .submitButton:disabled {
+    background-color: var(--button-disabled);
+    cursor: not-allowed;
+  }
+  
+  .cancelButton {
+    padding: 8px 16px;
+    background-color: var(--button-secondary);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .noteSelect {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    margin-top: 10px;
+  }
+  
+  .loading {
+    text-align: center;
+    padding: 20px;
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+  }
+  
+  .error {
+    text-align: center;
+    padding: 20px;
+    color: var(--error);
+    font-size: 1.2rem;
+  }
+  

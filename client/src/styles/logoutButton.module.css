@@ -1,0 +1,21 @@
+.logoutButton {
+  padding: 8px 15px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  background-color: var(--button-primary);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: auto;
+  width: 100%;
+}
+
+.logoutButton:hover {
+  background-color: var(--button-hover);
+}
+
+.logoutButton:active {
+  transform: translateY(1px);
+} 

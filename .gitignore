@@ -1,0 +1,15 @@
+# Ignore node_modules
+node_modules/
+
+# Logs
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Build output
+build/
+dist/
+
+.env

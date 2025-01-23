@@ -16,7 +16,7 @@ const seedUsers = async () => {
       }
     });
 
-    if (existingUsers.length === 0) {
+    if (existingUsers.length <= 1) {
       // Adaugă utilizatori de test doar dacă nu există
       const users = [
         {

@@ -368,7 +368,6 @@ router.post("/", isAuthenticated, upload.array("files"), async (req, res) => {
       title: req.body.title,
       content: req.body.content,
       subject: req.body.subject,
-      tags: JSON.parse(req.body.tags || "[]"),
       sourceType: req.body.sourceType,
       sourceUrl: req.body.sourceUrl,
       source: req.body.source,
@@ -376,6 +375,18 @@ router.post("/", isAuthenticated, upload.array("files"), async (req, res) => {
     };
 
     const note = await Note.create(noteData, { transaction: t });
+
+    // Adaugă tag-urile
+    if (req.body.tags) {
+      const tagList = JSON.parse(req.body.tags);
+      for (const tagName of tagList) {
+        const [tag, created] = await Tag.findOrCreate({
+          where: { name: tagName },
+          transaction: t
+        });
+        await note.addTag(tag, { transaction: t });
+      }
+    }
 
     // Save files
     if (req.files && req.files.length > 0) {
@@ -398,7 +409,7 @@ router.post("/", isAuthenticated, upload.array("files"), async (req, res) => {
     
     // Fetch the complete note with files
     const completeNote = await Note.findByPk(note.id, {
-      include: [File]
+      include: [File, Tag] // Include și tag-urile
     });
 
     res.status(201).json(completeNote);
